@@ -14,7 +14,6 @@ class App extends Component {
       errors: null,
       loading: true,
     }, () => {
-      console.log(this.state.file);
       Helpers.httpRequest(
         `http://localhost:5001?file=${this.state.file}`,
         'get',
@@ -75,7 +74,7 @@ class App extends Component {
               <form onSubmit={this.handleSubmit}>
                 <div className="input-group mb-3">
                   <div className="input-group-prepend">
-                    <span className="input-group-text" id="basic-addon1">sample.</span>
+                    <span className="input-group-text">sample.</span>
                   </div>
                   <input disabled={loading} onChange={this.handleChange} className="form-control" value={file} type="text" name="file" placeholder="File type, ex csv, pdf, png, etc" autoComplete="off" />
                 </div>
